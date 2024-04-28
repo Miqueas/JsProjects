@@ -1,0 +1,168 @@
+:root {
+  color: #16161b;
+  font-family: sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.completed {
+  color: #777;
+  text-decoration: line-through;
+}
+
+#todo-title {
+  font-size: 32pt;
+  margin-bottom: 3rem;
+}
+
+#todo-welcome-view {
+  margin-bottom: 32px;
+  text-align: center;
+
+  img {
+    width: 64px;
+  }
+}
+
+#todo-list, #todo-completed {
+  margin-bottom: 32px;
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin: 6px 0;
+    display: grid;
+    grid-template-columns: 32px 440px 32px 12px 32px;
+  }
+
+  li input[type="checkbox"] {
+    appearance: none;
+    color: #fafafa;
+    margin: 0;
+    padding-left: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 22pt;
+    border-radius: 50%;
+    place-self: center;
+    background-color: #aaa;
+  
+    &:checked {
+      background-color: green;
+
+      &::before {
+        content: "✔";
+      }
+    }
+  }
+
+  li label {
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 14pt;
+    padding: 4px 16px;
+  }
+
+  li input[type="text"] {
+    margin: 4px 16px;
+    padding: 8px;
+    font-size: 14pt;
+    border: 2px solid #16161b;
+    border-radius: 8px;
+  }
+
+  li button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #aaa;
+    place-self: center;
+
+    img {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &.editing {
+      color: #fafafa;
+      font-size: 22pt;
+      padding-left: 4px;
+      background-color: green;
+
+      &::before {
+        content: "✔";
+      }
+    }
+
+    &.delete {
+      grid-column: 5;
+      background-color: red;
+    }
+
+    &:disabled {
+      opacity: 0;
+    }
+  }
+}
+
+#todo-form {
+  display: grid;
+  grid-template-columns: 420px 12px 32px 12px 1fr;
+}
+
+#todo-input {
+  width: 420px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #16161b;
+  border-radius: 8px;
+}
+
+#todo-editable {
+  appearance: none;
+  color: #fafafa;
+  margin: 0;
+  padding-left: 4px;
+  width: 32px;
+  height: 32px;
+  font-size: 22pt;
+  border-radius: 50%;
+  place-self: center;
+  background-color: #aaa;
+  grid-column: 3;
+
+  &:checked {
+    background-color: green;
+
+    &::before {
+      content: "✔";
+    }
+  }
+}
+
+label[for="todo-editable"] {
+  grid-column: 5;
+  font-size: large;
+  place-self: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #fafafa;
+    background: #16161b;
+  }
+}

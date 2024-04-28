@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1 id="todo-title">To-Do List App</h1>
+    <section id="todo-welcome-view">
+      <img src="clipboard-check.svg" alt="Todo empty icon"/>
+      <h2>Looks like there's nothing pending</h2>
+      <p>You can start by adding small tasks. Write it in the input box below.</p>
+    </section>
+
+    <section id="todo-list-view">
+      <h2>Pending</h2>
+      <ul id="todo-list"></ul>
+      <h2>Completed</h2>
+      <ul id="todo-completed"></ul>
+    </section>
+
+    <section id="todo-add-view">
+      <form id="todo-form">
+        <input id="todo-input" type="text" placeholder="Add a task...">
+        <input id="todo-editable" type="checkbox" checked>
+        <label for="todo-editable">Editable</label>
+      </form>
+    </section>
+  </main>
+</body>
+<script src="index.js"></script>
+</html>
